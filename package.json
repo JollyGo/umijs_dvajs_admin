@@ -1,0 +1,22 @@
+{
+  "name": "iot-web",
+  "version": "1.0.0",
+  "description": "IOT-WEB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "umi dev",
+    "start": "npm run dev",
+    "build": "umi build"
+  },
+  "author": "wangjiale",
+  "license": "ISC",
+  "devDependencies": {
+    "ant-design-pro": "^2.1.1",
+    "dva": "^2.4.1",
+    "js-base64": "^2.4.9",
+    "prop-types": "^15.6.2",
+    "umi": "^2.2.6",
+    "umi-plugin-react": "^1.2.3"
+  }
+}
