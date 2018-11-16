@@ -2,8 +2,8 @@ export default{
     plugins: [
         ['umi-plugin-react', {
             antd:true,
-            dva:true,
-            mock:true
+            dva:true
+            // mock:true
         }],
     ],
 
@@ -11,7 +11,7 @@ export default{
         path: '/home',
         component: '../layout',
         routes:[{
-            path:'/home',
+            path:'.',
             component:'home'
         },{
             path:'user',
@@ -25,10 +25,10 @@ export default{
           component:'login'
       }],
 
-    // proxy: {
-    //     '/v1.0': {
-    //       target: 'https://api.dttsh.cn/api',
-    //       changeOrigin: true,
-    //     },
-    //   },
+    proxy: {
+        '/v1.0': {
+          target: 'http://localhost:5000/api',
+          changeOrigin: true,
+        },
+      },
 }

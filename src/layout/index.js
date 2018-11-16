@@ -1,15 +1,28 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types'
 import { Layout, Menu, Icon} from 'antd';
+import { connect } from 'dva'
+import { Loader } from '../components/Loader'
 import Link from 'umi/link'
 
 // Header, Footer, Sider, Content组件在Layout组件模块下
 const { Header, Footer, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
 
+function mapStateToProps(state){
+    return{
+      Loading: state.loading.effects['app/query']
+    }
+  }
+
+@connect(mapStateToProps)
 class BasicLayout extends Component {
 render() {
+    // const {Loading}=this.props
   return (
     <Layout>
+        
+      
       <Sider width={256} style={{ minHeight: '100vh', color: 'white' }}>
       <div style={{ height: '32px', background: 'rgba(255,255,255,.2)', margin: '16px'}} src='../assets/GitHub.svg'/>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
@@ -48,4 +61,8 @@ render() {
 }
 }
 
+// BasicLayout.propTypes = {
+//     loading: PropTypes.object,
+//   }
+  
 export default BasicLayout;

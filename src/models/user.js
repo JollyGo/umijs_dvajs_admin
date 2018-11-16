@@ -1,20 +1,21 @@
-import * as login from '../service/login'
+
+import * as user from '../service/user'
 import router from 'umi/router'
 
 export default {
-  namespace: 'login',
+  namespace: 'user',
 
   state: {
     visible:false
   },
 
   effects: {
-    *login({ payload }, {put, call}) {
-      console.log('login')
-      console.log(payload)
+    *center({ payload }, {put, call}) {
+      console.log('center')
     try{
-      const data = yield call(login.login, payload)
-      router.push('/home')
+      const data = yield call(user.center, payload)
+      console.log(data)
+      router.push('/login')
     }catch(e){
       console.log(e)
       yield put({type:'unAuth'})

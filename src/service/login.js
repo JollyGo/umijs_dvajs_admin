@@ -3,7 +3,7 @@ import {Base64} from 'js-base64'
 
 
 export function login(auth){
-    return request('api/v1.0/login',{
+    return request('/v1.0/login',{
         headers:{
             'content-type': 'application/json',
             'Authorization': 'Basic '+Base64.encode(auth.username+':'+auth.password)
